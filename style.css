@@ -110,11 +110,11 @@ span {
 .home-content h3 {
     margin-bottom: 2rem;
     margin-top: 1rem;
-    font-size: 3.5rem;
+    font-size: 3rem;
 }
 
 .home-content h1 {
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
@@ -355,8 +355,8 @@ span {
 .timeline-content {
     display: flex;
     flex-direction: column;
-    justify-content: left; /* Centre horizontalement */
-    align-items: left; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
     background-color: var(--bg-color);
     border: 3px solid var(--main-color);
     padding: 3rem 6rem; /* Ajuste pour créer un rectangle plus horizontal */
@@ -375,11 +375,11 @@ span {
 }
 
 .timeline-content h3 {
-    font-size: 25px;
+    font-size: 24px;
     color: white;
     font-weight: 700;
     margin-bottom: 1rem; /* Ajoute un espace sous le titre */
-    text-align: right; /* Centre le titre */
+    text-align: center; /* Centre le titre */
 }
 
 .timeline-content p, .timeline-content pre {
@@ -387,7 +387,7 @@ span {
     font-size: 16px;
     font-weight: 300;
     margin-top: 1rem; /* Ajoute un espace au-dessus du paragraphe */
-    text-align: left; /* Centre le paragraphe */
+    text-align: center; /* Centre le paragraphe */
 }
 
 ::-webkit-scrollbar{
@@ -443,17 +443,17 @@ span {
     max-height: auto;
     justify-content: left;
     align-items: baseline;
-    padding: 3rem 3rem;
+    padding: 1.5rem 3rem;
 }
 
 .service-info h4 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 2;
 }
 
 .service-info p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     max-height: 100px;
     line-height: 1.7;
@@ -621,4 +621,139 @@ span {
     color: white;
 }
 
+/* Base styles (desktop first) remain the same */
 
+/* Mobile styles */
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 1.5rem 5%;
+    flex-wrap: wrap;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 6rem;
+    right: 2rem;
+    background: var(--bg-color);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px var(--main-color);
+    z-index: 100;
+    width: auto;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    font-size: 2.2rem;
+    margin: 1rem 0;
+    border-bottom: none;
+    color: var(--text-color);
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    color: var(--main-color);
+  }
+
+  .home {
+    flex-direction: column;
+    gap: 3rem !important;
+    padding: 5rem 5%;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+  }
+
+  .home-img img {
+    width: 60vw;
+    max-width: 300px;
+    border-radius: 50%;
+    margin-top: 2rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-group a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .timeline-items {
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .timeline-item {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .timeline-content {
+    width: 100% !important;
+    max-width: 500px;
+    padding: 2rem 3rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+    box-sizing: border-box;
+  }
+
+  .timeline-content h3,
+  .timeline-content p,
+  .timeline-content pre {
+    text-align: center;
+  }
+
+  .services-container,
+  .services-container-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box,
+  .service-box-2 {
+    height: auto;
+  }
+
+  .contact form {
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
